@@ -148,7 +148,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text"  id="eritrocitos" name="eritrocitos">
+							<input class="form-control" type="number"  id="eritrocitos" name="eritrocitos">
 						</div>
 
 						<div class="col">
@@ -169,7 +169,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="hemoglobina" name="hemoglobina">
+							<input class="form-control" type="number" id="hemoglobina" name="hemoglobina">
 						</div>
 
 						<div class="col">
@@ -189,7 +189,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="hematocrito" name="hematocrito">
+							<input class="form-control" type="number" id="hematocrito" name="hematocrito">
 						</div>
 
 						<div class="col">
@@ -209,7 +209,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="volglobmed" name="volglobmed">
+							<input class="form-control" type="number" id="volglobmed" name="volglobmed">
 						</div>
 
 						<div class="col">
@@ -229,7 +229,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="hemglobmed" name="hemglobmed">
+							<input class="form-control" type="number" id="hemglobmed" name="hemglobmed">
 						</div>
 
 						<div class="col">
@@ -249,7 +249,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="conmedhbglob" name="conmedhbglob">
+							<input class="form-control" type="number" id="conmedhbglob" name="conmedhbglob">
 						</div>
 
 						<div class="col">
@@ -269,7 +269,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="ancdisteritrocito" name="ancdisteritrocito">
+							<input class="form-control" type="number" id="ancdisteritrocito" name="ancdisteritrocito">
 						</div>
 
 						<div class="col">
@@ -289,7 +289,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="plaquetas" name="plaquetas">
+							<input class="form-control" type="number" id="plaquetas" name="plaquetas">
 						</div>
 
 						<div class="col">
@@ -309,7 +309,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="volplaqmed" name="volplaqmed">
+							<input class="form-control" type="number" id="volplaqmed" name="volplaqmed">
 						</div>
 
 						<div class="col">
@@ -349,7 +349,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="leucocitos" name="leucocitos">
+							<input class="form-control" type="number" id="leucocitos" name="leucocitos">
 						</div>
 
 						<div class="col">
@@ -369,7 +369,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="segmentados" name="segmentados">
+							<input class="form-control" type="number" id="segmentados" name="segmentados">
 						</div>
 
 						<div class="col">
@@ -389,7 +389,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="linfocitos" name="linfocitos">
+							<input class="form-control" type="number" id="linfocitos" name="linfocitos">
 						</div>
 
 						<div class="col">
@@ -409,7 +409,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="monocitos" name="monocitos">
+							<input class="form-control" type="number" id="monocitos" name="monocitos">
 						</div>
 
 						<div class="col">
@@ -429,7 +429,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="eosinofilos" name="eosinofilos">
+							<input class="form-control" type="number" id="eosinofilos" name="eosinofilos">
 						</div>
 
 						<div class="col">
@@ -449,7 +449,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="basofilos" name="basofilos">
+							<input class="form-control" type="number" id="basofilos" name="basofilos">
 						</div>
 
 						<div class="col">
@@ -469,7 +469,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="segmen" name="segmen">
+							<input class="form-control" type="number" id="segmen" name="segmen">
 						</div>
 
 						<div class="col">
@@ -489,7 +489,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="linfo" name="linfo">
+							<input class="form-control" type="number" id="linfo" name="linfo">
 						</div>
 
 						<div class="col">
@@ -509,7 +509,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="Mono" name="Mono">
+							<input class="form-control" type="number" id="Mono" name="Mono">
 						</div>
 
 						<div class="col">
@@ -530,7 +530,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="eosin" name="eosin">
+							<input class="form-control" type="number" id="eosin" name="eosin">
 						</div>
 
 						<div class="col">
@@ -550,7 +550,7 @@ $result=mysqli_query($conexion,$sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" type="text" id="basof" name="basof">
+							<input class="form-control" type="number" id="basof" name="basof">
 						</div>
 
 						<div class="col">

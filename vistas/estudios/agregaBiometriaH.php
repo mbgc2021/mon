@@ -13,7 +13,7 @@ $idusuario=$_SESSION['iduser'];
 $idCliente=$_POST['id_cliente'];
 
 $obj=new biometria();
-print_r($datos);
+//print_r($datos);
 $datos = array(
 	$idventa,
 	$idCliente,
