@@ -3,19 +3,16 @@ session_start();
 require_once "../../clases/Conexion.php";
 require_once "../../clases/Biometria.php";
 
-$idestudio=$_POST['id_estudio'];
-$idventa=self::creaFolio();
-$datos=$_SESSION['tablaComprasTemp'];
-$idusuario=$_SESSION['iduser'];
-$idCliente=$_POST['id_cliente'];
+/*$datos=$_SESSION['tablaComprasTemp'];
+$idusuario=$_SESSION['iduser'];*/
+//$idVenta = $_POST['idVentaEstudio'];
+//$idCliente = $_POST['idClienteEstudio'];
+	
+$obj = new biometria();
 
-
-
-$datos = array(
-	$idventa,
-	$idCliente,
-	$idestudio,
-	$iduser,
+ $datos = array(
+ 	$_POST['idVentaEstudio'],
+	$_POST['idClienteEstudio'],
 	$_POST['eritrocitos'],
 	$_POST['hemoglobina'],
 	$_POST['hematocrito'],
@@ -39,7 +36,7 @@ $datos = array(
 	$_POST['metodo'],
 	$_POST['muestra'],
 	$_POST['observaciones']
-);
+							);
 
-echo $datos[$idventa];
+echo $obj-> agregaBiometria($datos);
 ?>

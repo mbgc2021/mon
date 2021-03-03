@@ -11,12 +11,14 @@ fechaCompra,
 id_cliente
 FROM ventas GROUP BY id_venta";
 
-$result=mysqli_query($conexion,$sql);
+$result = mysqli_query($conexion, $sql);
 ?>
 
 
 <h4>Orden 
 </h4>
+
+
 <div class="row">
 	
 	<div class="col-sm-12">
@@ -32,7 +34,11 @@ $result=mysqli_query($conexion,$sql);
 					<td>Ticket</td>
 					<td>Reporte</td>
 				</tr>
-				<?php while($ver=mysqli_fetch_row($result)): ?>
+				<?php 
+				while($ver = mysqli_fetch_row($result)) {
+
+					$datos =  $ver[0] . "||" . $ver[2];
+					?>
 					<tr>
 						<td><?php echo $ver[0] ?></td>
 						<td><?php echo $ver[1] ?></td>
@@ -44,9 +50,14 @@ $result=mysqli_query($conexion,$sql);
 								for ($i=0; $i < count($estudiosArray); $i++) { 
 									?>
 									<tr>
-										<td><?php echo $estudiosArray[$i]; ?> </td>
 										<td>
-											<span class="btn btn-warning btn-sm" onclick="agregaBiometria('<?php echo $datos  ?>')"  data-toggle="modal" data-target="#editarEstudioSelect">
+											<?php 
+											echo $estudioLoop = $estudiosArray[$i];
+											$estudioLoop = "||" . $estudioLoop; 
+											?> 
+										</td>
+										<td>
+											<span class="btn btn-warning btn-sm" onclick="agregarDatosIds('<?php echo $datos.$estudioLoop ?>')" data-toggle="modal" data-target="#editarEstudioSelect">
 												Cap. Resultados
 											</span> 
 										</td>
@@ -71,7 +82,7 @@ $result=mysqli_query($conexion,$sql);
 
 					</tr>
 
-				<?php endwhile;
+				<?php } ;
 				?>
 
 			</table>
@@ -96,7 +107,8 @@ $result=mysqli_query($conexion,$sql);
 			</div>
 			<div class="modal-body">
 				<form class="frmbiometria">
-					
+					<input type="text" name="idVentaEstudio" id="idVentaEstudio" >
+					<input type="text" name="idClienteEstudio" id="idClienteEstudio" >
 					<div class="row">
 						<div class="col-xl-12">
 							<h4>Biometria hematica</h4>
@@ -658,57 +670,92 @@ $result=mysqli_query($conexion,$sql);
 	</div>
 	<div class="col-sm-8">
 
-				<div id="tablaBiometriaHLoad"></div>
+		<div id="tablaBiometriaHLoad"></div>
 
-			</div>
+	</div>
 
 </div>
 </div>
 <script type="text/javascript">
-	function agregaBiometria(datos){
+
+	$(document).ready(function(){
+		
+		$('#btnAgregaBiometriaH').click(function(){
+			agregaBiometria();
+			vacios= validarFormVacio('frmbiometria');
+
+      if (vacios > 0 ){
+        alertify.alert("Debes llenar todos los campos.");
+        return false;
+    }else 
+    function agregaBiometria(datos){
+    			$('#idVentaEstudio').val(['id_venta']);
+				$('#idClienteEstudio').val(['id_cliente']);
+				$('#eritrocitos').val(['Eritrocitos']);
+				$('#hemoglobina').val(['Hemoglobina']);
+				$('#hematocrito').val(['Hematocrito']);
+				$('#volglobmed').val(['VolumenGlobularM']);
+				$('#hemglobmed').val(['HemogGlobularM']);
+				$('#conmedhbglob').val(['ConcMediaHbGlob']);
+				$('#ancdisteritrocito').val(['AnchoDistEritrocitos']);
+				$('#plaquetas').val(['Plaquetas']);
+				$('#volplaqmed').val(['VolumenPlaqMedio']);
+				$('#leucocitos').val(['Leucocitos']);
+				$('#segmentados').val(['Segmentados1']);
+				$('#linfocitos').val(['Linfocitos1']);
+				$('#monocitos').val(['Monocitos1']);
+				$('#eosinofilos').val(['Eosinofilos1']);
+				$('#basofilos').val(['Basofilos1']);
+				$('#segmen').val(['Segmentados2']);
+				$('#linfo').val(['Linfocitos2']);
+				$('#Mono').val(['Monocitos2']);
+				$('#eosin').val(['Eosinofilos2']);
+				$('#basof').val(['Basofilos2']);
+				$('#metodobio').val(['metodo']);
+				$('#muestrabio').val(['muestra']);
+				$('#Observacionesbio').val(['observaciones']);
+				
 		$.ajax({
 			type:"POST",
-			data:"datos="+ datos,
+			data:$('#frmbiometria').serialize(),
 			url:"../procesos/estudios/agregaBiometriaH.php",
-			success:function(r){
-				dato=jQuery.parseJSON(r);
+			success:function(r) {
 				
-				$('#idbiometria').val(dato['id_biometria']);
-				$('#eritrocitos').val(dato['Eritrocitos']);
-				$('#hemoglobina').val(dato['Hemoglobina']);
-				$('#hematocrito').val(dato['Hematocrito']);
-				$('#volglobmed').val(dato['VolumenGlobularM']);
-				$('#hemglobmed').val(dato['HemogGlobularM']);
-				$('#conmedhbglob').val(dato['ConcMediaHbGlob']);
-				$('#ancdisteritrocito').val(dato['AnchoDistEritrocitos']);
-				$('#plaquetas').val(dato['Plaquetas']);
-				$('#volplaqmed').val(dato['VolumenPlaqMedio']);
-				$('#leucocitos').val(dato['Leucocitos']);
-				$('#segmentados').val(dato['Segmentados1']);
-				$('#linfocitos').val(dato['Linfocitos1']);
-				$('#monocitos').val(dato['Monocitos1']);
-				$('#eosinofilos').val(dato['Eosinofilos1']);
-				$('#basofilos').val(dato['Basofilos1']);
-				$('#segmen').val(dato['Segmentados2']);
-				$('#linfo').val(dato['Linfocitos2']);
-				$('#Mono').val(dato['Monocitos2']);
-				$('#eosin').val(dato['Eosinofilos2']);
-				$('#basof').val(dato['Basofilos2']);
-				$('#metodobio').val(dato['metodo']);
-				$('#muestrabio').val(dato['muestra']);
-				$('#Observacionesbio').val(dato['observaciones']);
+				if (r == 1) {
+					alert("insertado con exito");
+				}
 
 			}
 		});
 
-	}
 
+	function agregarDatosIds(datos) { 
+		datos = datos.split("||");
+		idVenta = datos[0];
+		idCliente = datos[1];
+		tipoEstudio = datos[2];
+		$('#idVentaEstudio').val(idVenta);
+		$('#idClienteEstudio').val(idCliente);
+
+/*if (tipoEstudio == 'BIOMETRIA HEMATICA') {
+			$('#editarEstudioSelect').modal("show");
+		} else if (tipoEstudio == 'QUIMICA SANGUINEA DE 6 ELEMENTOS') {
+			$('#editarEstudioSelect').modal("show");
+		}*/
+	
+}
+
+	}
+		});
+
+});
+	
 </script>
 
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		$('#tablaBiometriaHLoad').load("estudios/tablabiometriaH.php");
+		
 		$('#btnAgregaBiometriaH').click(function(){
 			vacios= validarFormVacio('frmbiometria');
       if (vacios > 0 ){
@@ -723,7 +770,7 @@ $result=mysqli_query($conexion,$sql);
 				success:function(r){
 					if(r==1){
 						$('#frmbiometria')[0].reset();
-						$('#tablaBiometriaHLoad').load("estudios/tablabiometriaH.php");
+						
 						alertify.success(" Datos de Biometria agregados con exito");
 					}else{
 						alertify.error("No se registraron resultados de biometria");
@@ -738,4 +785,3 @@ $result=mysqli_query($conexion,$sql);
 
 	});
 </script>
-

@@ -1,47 +1,41 @@
 <?php 
 
-class biometria{
-	public function agregaBiometria($datos){
+class biometria {
+	public function agregaBiometria($datos) {
 	
-		$c=new conectar();
-		$conexion=$c->conexion();
-		$c= new conectar();
-	
-		$idusuario=$_SESSION['iduser'];
-		$idestudio=$_POST['id_estudio'];
-		$idventa=self::creaFolio();
-		$idCliente=$_POST['id_cliente'];
+		$c = new conectar();
+		$conexion = $c->conexion();
 
-		$sql="INSERT INTO biometria_hematica (id_venta,
-		id_cliente,
-		id_estudio,
-		id_usuario,
-		Eritrocitos,
-		Hemoglobina,
-		Hematocrito,
-		VolumenGlobularM,
-		HemogGlobularM,
-		ConcMediaHbGlob,
-		AnchoDistEritrocitos,
-		Plaquetas,
-		VolumenPlaqMedio,
-		Leucocitos,
-		Segmentados1,
-		Linfocitos1,
-		Monocitos1,
-		Eosinofilos1,
-		Basofilos1,
-		Segmentados2,
-		Linfocitos2,
-		Monocitos2,
-		Eosinofilos2,
-		Basofilos2,
-		metodo,
-		muestra,
-		observaciones) VALUES ('$idventa',
-							   '$idCliente',
-							   '$idestudio',
-							   '$idusuario',
+		
+
+		$sql = "INSERT INTO biometria_hematica (id_venta,
+ 												id_cliente,
+ 												Eritrocitos,
+												Hemoglobina,
+												Hematocrito,
+												VolumenGlobularM,
+												HemogGlobularM,
+												ConcMediaHbGlob,
+												AnchoDistEritrocitos,
+												Plaquetas,
+												VolumenPlaqMedio,
+												Leucocitos,
+												Segmentados1,
+												Linfocitos1,
+												Monocitos1,
+												Eosinofilos1,
+												Basofilos1,
+												Segmentados2,
+												Linfocitos2,
+												Monocitos2,
+												Eosinofilos2,
+												Basofilos2,
+												metodo,
+												muestra,
+												observaciones) 
+						VALUES ('$datos[1]',
+							   '$datos[2]',
+							   '$datos[3]',
 							   '$datos[4]',
 							   '$datos[5]',
 							   '$datos[6]',
@@ -62,16 +56,20 @@ class biometria{
 							   '$datos[21]',
 							   '$datos[22]',
 							   '$datos[23]',
-							   '$datos[24]',
-							   '$datos[25]',
-							   '$datos[26]')";
+							   '$datos[24]'					
+											)";
 
 
 		return mysqli_query($conexion,$sql);
 	}
 
+	/*public function obtenDatosEstudioBiometria($idVenta, $idCliente) {
+		$c = new conectar();
+		$conexion = $c->conexion();
 
+		$sql = "";
 
+	}*/
 
 
 }

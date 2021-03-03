@@ -3,22 +3,19 @@ session_start();
 if(isset($_SESSION['usuario'])){
 	//echo  $_SESSION['usuario'];	
 	?>
-
-
 	<!DOCTYPE html>
 	<html>
 	<head>
 		<title>Recepción Paciente</title>
 		<?php require_once "menu.php"; ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="../librerias/jquery-3.5.1.min.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../librerias/select2/select2.min.css">
-		
-		<script src="../librerias/select2/select2.min.js"></script>
-		
+		<script src="../librerias/jquery-3.5.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="../js/funciones.js"></script>
-
+		<script src="../librerias/select2/select2.min.js"></script>
 		<style type="text/css">
 			.row { margin: 3px 0; }
 			.row div[class*='col'] { padding: 3px;}
@@ -532,11 +529,11 @@ if(isset($_SESSION['usuario'])){
 				});
 
 			}
-			function eliminarCliente(idcliente){
+			function eliminarCliente(idcliente,idventa){
 				alertify.confirm('¿Desea eliminar este cliente?', function(){ 
 					$.ajax({
 						type:"POST",
-						data:"idcliente=" + idcliente,
+						data:"idcliente=" && "idventa=" + idcliente + idventa,
 						url:"../procesos/clientes/eliminarCliente.php",
 						success:function(r){
 							if(r==1){

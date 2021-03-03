@@ -5,21 +5,21 @@ class usuarios{
   $conexion=$c->conexion();
   $fecha=date('Y-m-d');
 
-  $sql="INSERT into usuarios (nombre,
+  $sql="INSERT INTO usuarios (nombre,
   apellidoPat,
   apellidoMat,
   email,
   tipoUsuario,
   password,
   cedulaProfesional,
-  fechaCaptura) values('$datos[0]',
-  '$datos[1]',
-  '$datos[2]',
-  '$datos[3]',
-  '$datos[4]',
-  '$datos[5]',
-  '$datos[6]',
-  '$fecha')";
+  fechaCaptura) VALUES ('$datos[0]',
+                        '$datos[1]',
+                        '$datos[2]',
+                        '$datos[3]',
+                        '$datos[4]',
+                        '$datos[5]',
+                        '$datos[6]',
+                        '$fecha')";
 
   return mysqli_query($conexion,$sql);
 }

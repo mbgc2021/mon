@@ -22,12 +22,13 @@ if(mysqli_num_rows($result) > 0) {
 	<title>login de usuario</title>
    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/ind.css">
+	
 	<script src="librerias/jquery-3.5.1.min.js"></script>
     <script src="js/funciones.js"></script>
      <script src="librerias/fontawesome/js/all.js"></script>
-   
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/ind.css">
      
 <body style="background-color:#1E3755 ">
 	
