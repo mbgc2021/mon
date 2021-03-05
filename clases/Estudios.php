@@ -40,7 +40,7 @@ class estudios{
 		'$datos[14]',
 		'$fecha')";
 
-		return mysqli_query($conexion,$sql);
+		return mysqli_query($conexion, $sql);
 	}
 	public function obtenDatosEstudio($idestudio){
 		$c=new conectar();

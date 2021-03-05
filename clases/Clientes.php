@@ -118,10 +118,8 @@ class clientes{
 
 		if ($result1) {
 			$sql2 = "DELETE from ventas 
-				WHERE id_venta='$idventa'";
-
+					WHERE id_venta = '$idventa'";
 			$result2 = mysqli_query($conexion, $sql);
-
 			
 		} else {
 			return 0;

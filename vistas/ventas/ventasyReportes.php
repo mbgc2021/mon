@@ -1,6 +1,7 @@
 <?php 
 require_once"../../clases/Conexion.php";
 require_once"../../clases/Ventas.php";
+
 $c = new conectar();
 $conexion = $c->conexion();
 
@@ -93,20 +94,18 @@ $result = mysqli_query($conexion, $sql);
 	</div>
 </div>
 
-
-
-<!-- Modal -->
 <div class="modal fade" id="editarEstudioSelect" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-xl" role="document">
-		<div class="modal-content ">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Resultados biometria hematica</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form class="frmbiometria">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resultados biometria hematica</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      		<form id="frmbiometria">
 					<input type="text" name="idVentaEstudio" id="idVentaEstudio" >
 					<input type="text" name="idClienteEstudio" id="idClienteEstudio" >
 					<div class="row">
@@ -164,7 +163,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="Eritrocitosn" name="Eritrocitosn">
+							
 						</div>
 						<div class="col">
 							<p>10^6/mm3</p>
@@ -185,7 +184,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="hemoglobinaN" name="hemoglobinaN">
+							
 						</div> 
 						<div class="col">
 							<p>g/dL</p>
@@ -205,7 +204,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="hematocritoN" name="hematocritoN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -225,7 +224,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="volglobmedN" name="volglobmedN">
+							
 						</div> 
 						<div class="col">
 							<p>fL</p>
@@ -245,7 +244,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="hemglobmedN" name="hemglobmedN">
+							
 						</div> 
 						<div class="col">
 							<p>pg</p>
@@ -265,7 +264,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="conmedhbglobN" name="conmedhbglobN">
+							
 						</div> 
 						<div class="col">
 							<p>g/dL</p>
@@ -285,7 +284,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="ancdisteritrocitoN" name="ancdisteritrocitoN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -305,7 +304,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="plaquetasN" name="plaquetasN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -325,7 +324,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="volplaqmedN" name="volplaqmedN">
+							
 						</div> 
 						<div class="col">
 							<p>fL</p>
@@ -365,7 +364,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="leucocitosN" name="leucocitosN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -385,7 +384,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="segmentadosN" name="segmentadosN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -405,7 +404,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="linfocitosN" name="linfocitosN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -425,7 +424,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="monocitosN" name="monocitosN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -445,7 +444,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="eosinoN" name="eosinoN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -465,7 +464,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="basoN" name="basoN">
+							
 						</div> 
 						<div class="col">
 							<p>10^3/mm3</p>
@@ -485,7 +484,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="segmN" name="segmN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -505,7 +504,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="linfocN" name="linfocN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -525,7 +524,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="MonocN" name="MonocN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -546,7 +545,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="eosinoN" name="eosinoN">
+							
 						</div> 
 						<div class="col">
 							<p>%</p>
@@ -566,8 +565,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col">
-							<input class="form-control" disabled="" type="text" id="basofiN" name="basofiN">
-						</div> 
+							</div>
 						<div class="col">
 							<p>%</p>
 						</div>
@@ -603,7 +601,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col md-4">
-							<input class="form-control" type="text" id="metodobio" name="metodobio">
+							<input type="text" class="form-control"  id="metodobio" name="metodobio">
 						</div>
 
 						<div class="col">
@@ -623,7 +621,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col md-4">
-							<input class="form-control" type="text" id="muestrabio" name="muestrabio">
+							<input type="text" class="form-control"  id="muestrabio" name="muestrabio">
 
 						</div>
 
@@ -644,7 +642,7 @@ $result = mysqli_query($conexion, $sql);
 						</div>
 
 						<div class="col-md-4">
-							<textarea class="form-control" id="Observacionesbio"></textarea>
+							<textarea type="text" class="form-control" id="Observacionesbio" name="Observacionesbio"> </textarea>
 						</div>
 
 						<div class="col">
@@ -659,22 +657,22 @@ $result = mysqli_query($conexion, $sql);
 					</div>
 
 				</form>
-			</div>
-		</div>
-		<div class="modal-footer">
-			<button type="button" id="btnAgregaBiometriaH" class="btn btn-secondary" data-dismiss="modal">Guardar</button>
 
-			
-		</div>
-
-	</div>
-	<div class="col-sm-8">
-
-		<div id="tablaBiometriaHLoad"></div>
-
-	</div>
-
+        	<div class="row">
+        		<div class="col-sm-8">
+					<div id="tablaBiometriaHLoad"></div>
+				</div> 	
+        	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="btnAgregaBiometriaH">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Modal -->
 </div>
 <script type="text/javascript">
 
@@ -682,52 +680,9 @@ $result = mysqli_query($conexion, $sql);
 		
 		$('#btnAgregaBiometriaH').click(function(){
 			agregaBiometria();
-			vacios= validarFormVacio('frmbiometria');
-
-      if (vacios > 0 ){
-        alertify.alert("Debes llenar todos los campos.");
-        return false;
-    }else 
-    function agregaBiometria(datos){
-    			$('#idVentaEstudio').val(['id_venta']);
-				$('#idClienteEstudio').val(['id_cliente']);
-				$('#eritrocitos').val(['Eritrocitos']);
-				$('#hemoglobina').val(['Hemoglobina']);
-				$('#hematocrito').val(['Hematocrito']);
-				$('#volglobmed').val(['VolumenGlobularM']);
-				$('#hemglobmed').val(['HemogGlobularM']);
-				$('#conmedhbglob').val(['ConcMediaHbGlob']);
-				$('#ancdisteritrocito').val(['AnchoDistEritrocitos']);
-				$('#plaquetas').val(['Plaquetas']);
-				$('#volplaqmed').val(['VolumenPlaqMedio']);
-				$('#leucocitos').val(['Leucocitos']);
-				$('#segmentados').val(['Segmentados1']);
-				$('#linfocitos').val(['Linfocitos1']);
-				$('#monocitos').val(['Monocitos1']);
-				$('#eosinofilos').val(['Eosinofilos1']);
-				$('#basofilos').val(['Basofilos1']);
-				$('#segmen').val(['Segmentados2']);
-				$('#linfo').val(['Linfocitos2']);
-				$('#Mono').val(['Monocitos2']);
-				$('#eosin').val(['Eosinofilos2']);
-				$('#basof').val(['Basofilos2']);
-				$('#metodobio').val(['metodo']);
-				$('#muestrabio').val(['muestra']);
-				$('#Observacionesbio').val(['observaciones']);
-				
-		$.ajax({
-			type:"POST",
-			data:$('#frmbiometria').serialize(),
-			url:"../procesos/estudios/agregaBiometriaH.php",
-			success:function(r) {
-				
-				if (r == 1) {
-					alert("insertado con exito");
-				}
-
-			}
 		});
-
+	});
+	
 
 	function agregarDatosIds(datos) { 
 		datos = datos.split("||");
@@ -737,51 +692,56 @@ $result = mysqli_query($conexion, $sql);
 		$('#idVentaEstudio').val(idVenta);
 		$('#idClienteEstudio').val(idCliente);
 
-/*if (tipoEstudio == 'BIOMETRIA HEMATICA') {
+		/*if (tipoEstudio == 'BIOMETRIA HEMATICA') {
 			$('#editarEstudioSelect').modal("show");
 		} else if (tipoEstudio == 'QUIMICA SANGUINEA DE 6 ELEMENTOS') {
 			$('#editarEstudioSelect').modal("show");
 		}*/
 	
-}
-
 	}
-		});
 
-});
-	
+
+	function agregaBiometria(datos){
+				
+		$.ajax({
+			type:"POST",
+			data:$('#frmbiometria').serialize(),
+			url:"../procesos/estudios/insertaBiometria.php",
+			success:function(r) {
+				//console.log(r);
+				if (r == 1) {
+					alert("insertado con exito");
+				}
+
+			}
+		});
+	}
+
 </script>
 
 <script type="text/javascript">
 	
-	$(document).ready(function(){
-		
-		$('#btnAgregaBiometriaH').click(function(){
-			vacios= validarFormVacio('frmbiometria');
-      if (vacios > 0 ){
-        alertify.alert("Debes llenar todos los campos.");
-        return false;
-      }
-			datos=$('#frmbiometria').serialize();
-			$.ajax({
-				type:"POST",
-				data:datos,
-				url:"../procesos/estudios/agregaBiometriaH.php",
-				success:function(r){
-					if(r==1){
-						$('#frmbiometria')[0].reset();
-						
-						alertify.success(" Datos de Biometria agregados con exito");
-					}else{
-						alertify.error("No se registraron resultados de biometria");
-					}
-
+$(document).ready(function() {
+	$('#btnAgregaBiometriaH').click(function(){
+		vacios = validarFormVacio('frmbiometria');
+		if (vacios > 0 ) {
+			alertify.alert("Debes llenar todos los campos.");
+			return false;
+		}
+		datos = $('#frmbiometria').serialize();
+		$.ajax({
+			type:"POST",
+			data:datos,
+			url:"../procesos/estudios/insertaBiometria.php",
+			success:function(r){
+				if(r == 1) {
+					$('#frmbiometria')[0].reset();
+					alertify.success(" Datos de Biometria agregados con exito");
+				}else{
+					alertify.error("No se registraron resultados de biometria");
 				}
-			});
-
-
-
+			}
 		});
-
 	});
+});
 </script>
